@@ -1,7 +1,5 @@
 from django.db import models
 
-""" The model names are bad... think about something better """
-
 """ It has a name (i.e.: Yano) and a category (i.e.: teacher) """
 class Item(models.Model):
     name = models.CharField(max_length=128, unique=True)
