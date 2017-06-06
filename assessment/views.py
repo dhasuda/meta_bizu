@@ -2,7 +2,7 @@ from django.shortcuts import render
 from assessment.models import Item, Opinion
 
 def home(request):
-    return render(request, 'assessment/test.html',)
+    return render(request, 'assessment/home.html',)
 
 def search(request):
     return render(request, 'assessment/test.html',)
