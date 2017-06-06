@@ -1,22 +1,48 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Rango</title>
+        <title>Reviews</title>
+        <script type="text/javascript" src="scripts.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
 
-    <body>
-        <h1>Rango says...hello world!</h1>
+    <body style="background-color:blue;">
+      <h1 title="O lugar ideal para os viradões eficientes">Bizuário</h1>
+      <h2>O lugar ideal para os viradões eficientes</h2>
+      <p>text, text text, text</p>
+      <input type="text" name="search" placeholder="Buscar.." title="Insira o livro, professor ou disciplina desejado">
 
-        {% if categories %}
-            <ul>
-                {% for category in categories %}
-                <li>{{ category.name }}</li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            <strong>There are no categories present.</strong>
-        {% endif %}
 
-        <a href="/rango/about/">About</a>
+      <!-- Trigger/Open The Modal -->
+      <button id="myBtn">Open Modal</button>
+
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Some text in the Modal..</p>
+        </div>
+
+      </div>
+
+      <!-- Modal content -->
+<div class="modal-content">
+  <div class="modal-header">
+    <span class="close">&times;</span>
+    <h2>Modal Header</h2>
+  </div>
+  <div class="modal-body">
+    <p>Some text in the Modal Body</p>
+    <p>Some other text...</p>
+  </div>
+  <div class="modal-footer">
+    <h3>Modal Footer</h3>
+  </div>
+</div>
+
+
     </body>
+
 </html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body {
+    background-color: rgb(64, 128, 0);
+}
+
+
+h2 {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 50px;
+    text-align: center;
+}
+
+p {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 30px;
+    text-align: left;
+}
+
+.insert {
+    background-color: black; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 50px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: rgb(102, 153, 0);
+    font-family: "Courier New", Courier, monospace;
+    font-size: 30px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid rgb(68, 102, 0);
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.search {
+  width: 200px;
+  box-sizing: border-box;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  font-size: 30px;
+  background-color: white;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  padding: 12px 20px 12px 40px;
+}
+
+.side {
+    display: inline-block;
+}
+
+</style>
+</head>
+<body>
+
+<h2>Bizuário</h2>
+
+<!-- Trigger/Open The Modal -->
+<div class="side">
+  <button id="myBtn" class="insert" title="Nova avaliação">+</button>
+</div>
+<div class="side">
+  <form>
+    <input id="mySearch" class="search" type="text" name="search" placeholder="Search.." title="Buscar avaliações">
+  </form>
+<div>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Adicione aqui uma nova avaliação:</h2><br>
+    <p>Nome do item avaliado:</p><br>
+    <p>Descrição:</p>
+  </div>
+
+</div>
+
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
