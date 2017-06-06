@@ -1,4 +1,6 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
+
 
 """ It has a name (i.e.: Yano) and a category (i.e.: teacher) """
 class Item(models.Model):
