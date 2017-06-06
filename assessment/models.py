@@ -2,10 +2,14 @@ from django.db import models
 
 """ The model names are bad... think about something better """
 
-#class Objeto(models.Model):
-""" It has a name (i.e.: Yano) and a type (i.e.: teacher) """
+""" It has a name (i.e.: Yano) and a category (i.e.: teacher) """
+class Item(models.Model):
+    name = models.CharField(max_length=128, unique=True)
+    category = models.IntegerField(default=0) # Each number is a category; 0 is no category
 
-#class Avaliacao(models.Model):
 """ It has a rank and some text and other stuff """
 """ precisa estar relacionado com um objeto """
-#objeto = models.ForeignKey(Objeto)
+class Opinion(models.Model):
+    item = models.ForeignKey(Item)
+    rank = models.IntegerField(validators=[MinValueValidator(1),MaxValueValidator(5)])
+    description = models.CharField(max_length=500)
