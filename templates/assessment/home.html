@@ -76,8 +76,22 @@ p {
   box-sizing: border-box;
   border: 2px solid #fff;
   border-radius: 4px;
-  font-size: 50px;
   font-family: "Courier New", Courier, monospace;
+  font-size: 50px;
+  background-color: white;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  padding: 12px 20px 12px 40px;
+}
+
+.usertype {
+  width: 400px;
+  box-sizing: border-box;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 30px;
   background-color: white;
   background-position: 10px 10px;
   background-repeat: no-repeat;
@@ -89,9 +103,6 @@ p {
     display: inline-block;
 }
 
-.verticalLine {
-  border-left: thick solid #ff0000;
-}
 
 </style>
 </head>
@@ -114,8 +125,11 @@ p {
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <h2>Adicione aqui uma nova avaliação:</h2><br>
-    <p>Nome do item avaliado:</p><br>
+    <h2>Adicione aqui uma nova avaliação:</h2>
+    <p>Nome do item avaliado:</p>
+    <form>
+      <input id="myName" class="usertype" type="text" name="type" placeholder="Nome" title="Insira o livro, matéria ou professor a ser avaliado">
+    </form>
     <p>Descrição:</p>
   </div>
 
