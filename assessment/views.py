@@ -23,6 +23,7 @@ def add_review_itemPage(request):
         else:
             print (form.erros)
 
+
     else:
         form = ItemForm()
     return render(request, 'assessment/add_review_itemPage.html', {'form': form})
