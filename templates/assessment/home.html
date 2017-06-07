@@ -4,32 +4,33 @@
 <style>
 
 body {
-    background-color: rgb(64, 128, 0);
+    background-color: rgb(12,75,51);
 }
 
 
 h1 {
-    font-family: "Courier New", Courier, monospace;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-size: 50px;
     text-align: center;
+    color: white;
 }
 
 p {
-    font-family: "Courier New", Courier, monospace;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-size: 30px;
     text-align: left;
 }
 
 .insert {
-    background-color: black; /* Green */
+    background-color: white; /* Green */
     border: none;
-    color: rgb(64, 128, 0);
+    color: rgb(12,75,51);
     padding: 15px 32px;
     text-align: left;
     text-decoration: none;
     position: absolute;
     box-sizing: border-box;
-    border: 2px solid #000;
+    border: 2px solid white;
     border-radius: 4px;
     width: 500px;
     height: 80px;
@@ -37,18 +38,19 @@ p {
     top: 50%;
     left: 50%;
     margin: -40px 0 0 -250px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 .square1 {
-    background-color: rgb(64, 128, 0); /* Green */
+    background-color: rgb(12,75,51); /* Green */
     border: none;
-    color: black;
+    color: white;
     padding: 0px 0px;
     text-align: center;
     text-decoration: none;
     position: absolute;
     box-sizing: border-box;
-    border: 2px solid black;
+    border: 2px solid white;
     border-radius: 4px;
     width: 80px;
     height: 80px;
@@ -56,6 +58,7 @@ p {
     top: 50%;
     left: 50%;
     margin: -40px 0 0 170px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 /* The Modal (background) */
 .modal {
@@ -106,9 +109,9 @@ p {
   position: absolute;
   margin: 80px 0 0 -250px;
   box-sizing: border-box;
-  border: 2px solid #fff;
+  border: 2px solid white;
   border-radius: 4px;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
   font-size: 40px;
   background-color: white;
   background-position: 10px 10px;
@@ -120,9 +123,9 @@ p {
 .usertype {
   width: 400px;
   box-sizing: border-box;
-  border: 2px solid #fff;
+  border: 2px solid white;
   border-radius: 4px;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
   font-size: 30px;
   background-color: white;
   background-position: 10px 10px;
@@ -143,11 +146,38 @@ p {
 
 </style>
 </head>
-<body>
+git<body>
 
-<h1>Bizuário</h1>
+<h1>Meta Bizu</h1>
 
 <!-- Trigger/Open The Modal -->
+
+<div class="side">
+  <button id="myBtn" class="insert" title="Nova avaliação">+</button>
+</div>
+
+<div class="side">
+    <!-- <form>
+     <input id="mySearch" class="search" type="text" name="search" placeholder="Search.." title="Buscar avaliações">
+  </form> -->
+    <form id="item_form" method="post">
+        {% csrf_token %}
+        {% for hidden in form.hidden_fields %}
+            {{ hidden }}
+        {% endfor %}
+
+        {% for field in form.visible_fields %}
+            {{ field.errors }}
+            {{ field }}
+        {% endfor %}
+
+            <input type="submit" name="submit" value="Procurar" />
+    </form>
+<div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
 
 
 

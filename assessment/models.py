@@ -15,6 +15,9 @@ class Item(models.Model):
             self.s = slugify(self.name)
         super(Item, self).save()
 
+class SearchText(models.Model):
+    name = models.CharField(max_length=128)
+
 """ It has a rank and some text and other stuff """
 """ precisa estar relacionado com um objeto """
 class Opinion(models.Model):
