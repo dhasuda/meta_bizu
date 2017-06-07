@@ -1,8 +1,67 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Review</title>
-    </head>
+<head>
+
+<title>Review</title>
+
+<style>
+
+body {
+    background-color: rgb(64, 128, 0);
+}
+
+
+h1 {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 50px;
+    text-align: center;
+}
+
+p {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 30px;
+    text-align: left;
+}
+
+.insert {
+    background-color: black; /* Green */
+    border: none;
+    color: rgb(64, 128, 0);
+    padding: 15px 32px;
+    text-align: left;
+    text-decoration: none;
+    position: absolute;
+    box-sizing: border-box;
+    border: 2px solid #000;
+    border-radius: 4px;
+    width: 500px;
+    height: 80px;
+    font-size: 45px;
+    top: 50%;
+    left: 50%;
+    margin: -40px 0 0 -250px;
+}
+
+.square1 {
+    background-color: rgb(64, 128, 0); /* Green */
+    border: none;
+    color: black;
+    padding: 0px 0px;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 4px;
+    width: 80px;
+    height: 80px;
+    font-size: 45px;
+    top: 50%;
+    left: 50%;
+    margin: -40px 0 0 170px;
+}
+
+</style>
 
     <body>
         <h1>What do you want to talk about?</h1>
@@ -20,8 +79,11 @@
                 {{ field }}
             {% endfor %}
 
-            <input type="submit" name="submit" value="Create Category" />
+            <input type="submit" name="submit" value="Create Category" class="insert"/>
         </form>
+
+        <a href="add_review_itemPage.html"><button id="myBtn" class="square1" title="Nova categoria">+</button></a>
+
     </body>
 
 </html>
