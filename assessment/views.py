@@ -13,15 +13,8 @@ def add_review_itemPage(request):
     if request.method == 'POST':
         form = ItemForm(request.POST)
 
-        if form.is_valid():
-            name = form['name'].value()
-            """category = form['category'].value()
-            print (name)
-            print(category)"""
-            #return add_review_opinionPage(request,)
-            return add_review_opinionPage(request, name)
-        else:
-            print (form.erros)
+        name = form['name'].value()
+        return add_review_opinionPage(request, name)
 
 
     else:
@@ -55,9 +48,19 @@ def add_review_opinionPage(request, itemName):
 """
 def add_review_opinionPage(request, name):
     context_dict = {}
+    context_dict['item_name'] = name
+
+
+    #newItem = Item(name=name)
+    #newItem.save()
+    #print (Item.objects.all())
+    if not Item.objects.filter(name=name).exists():
+        item = Item(name=name)
+        item.save()
 
     #item = Item.objects.get_or_create(name=name)
     #context_dict['item_name'] = item.name
 
     form = OpinionForm()
-    return render(request, 'assessment/add_review_opinionPage.html', context_dict, {'form': form})
+    context_dict['form'] = form
+    return render(request, 'assessment/add_review_opinionPage.html', context_dict)
