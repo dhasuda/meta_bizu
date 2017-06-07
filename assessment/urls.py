@@ -6,5 +6,7 @@ urlpatterns = [
 
     #TODO: It has to go to the result of the search... how to do that??
     url(r'^search/$', views.search),
-    url(r'^add_review/$', views.add_review),
+    url(r'^add_review_itemPage/$', views.add_review_itemPage),
+    url(r'^item/(?P<item_name_slug>[\w\-]+)/$', views.add_review_itemPage),
+    url(r'^add_review_opinionPage/$', views.add_review_opinionPage),
 ]

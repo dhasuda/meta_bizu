@@ -5,9 +5,9 @@
     </head>
 
     <body>
-        <h1>Add an Item</h1>
+        <h1>What do you want to talk about?</h1>
 
-        <form id="review" method="post" action="/assessment/add_review/">
+        <form id="review" method="post">
 
             {% csrf_token %}
             {% for hidden in form.hidden_fields %}
