@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Meta Bizu</title>
+    </head>
+
+    <body>
+        {% if item %}
+        <h1>{{ item_name }}</h1>
+            {% if opinions %}
+            <ul>
+                {% for op in opinions %}
+                <li>
+                    <h3>Nota: {{ op.rank }}</h3>
+                    <h3>Descrição: {{ op.description }}</h3>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+                <strong>No pages currently in category.</strong>
+            {% endif %}
+        {% else %}
+            The specified category {{ category_name }} does not exist!
+        {% endif %}
+    </body>
+</html>
