@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 ##ADD ITEM
 class ItemForm(forms.ModelForm):
     name = forms.CharField(max_length=128, help_text="Name")
-    category = forms.IntegerField(initial=0)
+    category = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
 
     # An inline class to provide additional information on the forms
     class Meta:
