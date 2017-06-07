@@ -4,8 +4,96 @@
         <title>Review</title>
     </head>
 
+<style>
+body {
+    background-color: rgb(12,75,51);
+}
+
+
+h1 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 50px;
+    color: white;
+    text-align: left;
+}
+
+h5 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 25px;
+    color: white;
+    text-align: left;
+}
+
+p {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 30px;
+    text-align: left;
+}
+
+.insert {
+    background-color: white; /* Green */
+    border: none;
+    color: rgb(12,75,51);
+    padding: 15px 32px;
+    text-align: left;
+    text-decoration: none;
+    position: absolute;
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-radius: 4px;
+    width: 500px;
+    height: 80px;
+    font-size: 45px;
+    top: 50%;
+    left: 50%;
+    margin: -40px 0 0 -250px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.gambi {
+    background-color: white; /* Green */
+    border: none;
+    color: rgb(12,75,51);
+    padding: 15px 32px;
+    text-align: left;
+    text-decoration: none;
+    position: absolute;
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-radius: 4px;
+    width: 500px;
+    height: 80px;
+    font-size: 45px;
+    top: 50%;
+    left: 50%;
+    margin: 80px 0 0 -250px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.square1 {
+    background-color: rgb(12,75,51); /* Green */
+    border: none;
+    color: white;
+    padding: 0px 0px;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-radius: 4px;
+    width: 80px;
+    height: 10px;
+    font-size: 45px;
+    top: 50%;
+    left: 50%;
+    margin: -40px 0 0 70px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+</style>
+
     <body>
         <h1>{{ item_name }}</h1>
+        <h5>Rank (1-5)</h5>
 
         <form id="review" method="post">
 
@@ -16,7 +104,7 @@
 
             {% for field in form.visible_fields %}
                 {{ field.errors }}
-                {{ field.help_text }}
+                <h5>{{ field.help_text }}</h5>
                 {{ field }}
             {% endfor %}
 
