@@ -3,7 +3,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from django.utils.text import slugify
 
 
-""" It has a name (i.e.: Yano) and a category (i.e.: teacher) """
+""" It has a name (i.e.: Yano) and a category (i.e.: professor) """
 class Item(models.Model):
     name = models.CharField(max_length=128, unique=True)
     category = models.IntegerField(default=0) # Each number is a category; 0 is no category

@@ -6,7 +6,8 @@ def home(request):
     return render(request, 'assessment/home.html',)
 
 def search(request):
-    return render(request, 'assessment/test.html',)
+    return render(request, 'assessment/search.html',)
+
 
 def add_review_itemPage(request):
     if request.method == 'POST':

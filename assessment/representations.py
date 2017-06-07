@@ -1,0 +1,1 @@
+itemCategories = {"OTHER": 0,"PROFESSOR": 1, "COURSE" : 2, "ARCHIVES" : 3}
