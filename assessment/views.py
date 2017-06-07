@@ -8,6 +8,9 @@ def home(request):
 def search(request):
     return render(request, 'assessment/search.html',)
 
+def successful_register(request):
+    return render(request, 'assessment/successful_register.html',)
+
 
 def add_review_itemPage(request):
     if request.method == 'POST':
@@ -35,7 +38,7 @@ def add_review_opinionPage(request, name):
             description = form['description'].value()
             opinion = Opinion(item=item, rank=rank, description=description)
             opinion.save()
-            return home(request)
+            return successful_register(request)
 
     context_dict = {}
     context_dict['item_name'] = name
