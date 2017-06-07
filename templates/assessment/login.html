@@ -3,6 +3,27 @@
     <head>
         <!-- Is anyone getting tired of repeatedly entering the header over and over?? -->
         <title>Log in</title>
+        <style>
+        body {
+            background-color: rgb(12,75,51);
+        }
+
+
+        h1 {
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            color: white;
+        }
+
+        h2 {
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            color: white;
+        }
+
+        h3 {
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            color: white;
+        }
+        </style>
     </head>
 
     <body>
@@ -10,10 +31,11 @@
 
         <form id="login_form" method="post" action="/login/">
             {% csrf_token %}
-            Username: <input type="text" name="username" value="" size="50" />
+            <h3>Username:</h3> <input type="text" name="username" value="" size="50" />
             <br />
-            Password: <input type="password" name="password" value="" size="50" />
+            <h3>Password:</h3> <input type="password" name="password" value="" size="50" />
             <br />
+            <br>
 
             <input type="submit" value="submit" />
         </form>
