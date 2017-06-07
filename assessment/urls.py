@@ -5,5 +5,6 @@ urlpatterns = [
     url(r'^$', views.home),
 
     #TODO: It has to go to the result of the search... how to do that??
-    url(r'^search', views.search),
+    url(r'^search/$', views.search),
+    url(r'^add_review/$', views.add_review),
 ]
