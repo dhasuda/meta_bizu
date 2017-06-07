@@ -2,6 +2,27 @@
 <html>
     <head>
         <title>Meta Bizu</title>
+        <style>
+        body {
+            background-color: rgb(12,75,51);
+        }
+
+
+        h1 {
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            color: white;
+        }
+
+        h2 {
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            color: white;
+        }
+
+        h3 {
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            color: white;
+        }
+        </style>
     </head>
 
     <body>
@@ -17,7 +38,7 @@
                 {% endfor %}
             </ul>
             {% else %}
-                <strong>No pages currently in category.</strong>
+                <strong><h3>No pages currently in category.</h3></strong>
             {% endif %}
         {% else %}
             The specified category {{ category_name }} does not exist!

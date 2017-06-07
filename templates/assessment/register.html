@@ -2,16 +2,42 @@
 <html>
     <head>
         <title>Register</title>
+        <style>
+        body {
+            background-color: rgb(12,75,51);
+        }
+
+
+        h1 {
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            color: white;
+        }
+
+        h2 {
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            color: white;
+        }
+
+        h3 {
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            color: white;
+        }
+
+        a {
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            color: white;
+        }
+        </style>
     </head>
 
     <body>
         <h1>Register</h1>
 
         {% if registered %}
-        <strong>thank you for registering!</strong>
+        <strong><a>thank you for registering!</a></strong>
         <a href="/">Return to the homepage.</a><br />
         {% else %}
-        <strong>register here!</strong><br />
+        <strong><a>register here!</a></strong><br />
 
         <form id="user_form" method="post">
                 enctype="multipart/form-data">
