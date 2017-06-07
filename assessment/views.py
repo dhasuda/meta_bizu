@@ -2,6 +2,7 @@ from django.shortcuts import render
 from assessment.forms import OpinionForm, ItemForm, ItemSearchForm
 from assessment.models import Item ,Opinion
 
+
 def home(request):
 
     if request.method == 'POST':
@@ -25,6 +26,7 @@ def search_resultPage(request,name):
         print("Entrou no else")
         return render(request, 'assessment/item_not_foundPage.html', context_dict)
 
+
 def itemPage(request, name):
     print("Entrou no itemPage")
     context_dict = {}
@@ -34,6 +36,10 @@ def itemPage(request, name):
     context_dict['opinions'] = opinions
     context_dict['item'] = item
     return render(request, 'assessment/itemPage.html', context_dict)
+
+def successful_register(request):
+    return render(request, 'assessment/successful_register.html',)
+
 
 def add_review_itemPage(request):
     if request.method == 'POST':
@@ -47,45 +53,30 @@ def add_review_itemPage(request):
         form = ItemForm()
     return render(request, 'assessment/add_review_itemPage.html', {'form': form})
 
-"""
-def add_review_opinionPage(request, itemName):
-    newItem = Item.objects.get_or_create(name=itemName)
-    #newItem.save() # Save the Item associated with the Opinion
-
-    # Get the information about the item it refers
-    context_dict = {}
-    try:
-        item = Item.objects.get_or_create(slug=item_name_slug)
-        context_dict['item_name'] = item.name
-    except Item.DoesNotExist:
-        pass
+def add_review_opinionPage(request, name):
+    global globalVar
+    if name:
+        globalVar = name
+    itemNameUsed = globalVar
 
     if request.method == 'POST':
         form = OpinionForm(request.POST)
-
         if form.is_valid():
-            return home(request)
-        else:
-            print (form.erros)
+            print (itemNameUsed)
+            item = Item.objects.get(name=itemNameUsed)
+            rank = form['rank'].value()
+            description = form['description'].value()
+            opinion = Opinion(item=item, rank=rank, description=description)
+            opinion.save()
+            return successful_register(request)
 
-    else:
-        form = OpinionForm()
-    return render(request, 'assessment/add_review_opinionPage.html', context_dict, {'form': form})
-"""
-def add_review_opinionPage(request, name):
     context_dict = {}
     context_dict['item_name'] = name
 
-
-    #newItem = Item(name=name)
-    #newItem.save()
-    #print (Item.objects.all())
     if not Item.objects.filter(name=name).exists():
         item = Item(name=name)
         item.save()
 
-    #item = Item.objects.get_or_create(name=name)
-    #context_dict['item_name'] = item.name
 
     form = OpinionForm()
     context_dict['form'] = form

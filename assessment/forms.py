@@ -26,5 +26,5 @@ class OpinionForm(forms.ModelForm):
 
     class Meta:
         model = Opinion
-        #fields = ('rank', 'description',)
-        exclude = ('Item',)
+        fields = ('rank', 'description',)
+        #exclude = ('Item',)

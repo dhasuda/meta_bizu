@@ -4,32 +4,62 @@
 <style>
 
 body {
-    background-color: rgb(64, 128, 0);
+    background-color: rgb(12,75,51);
 }
 
 
-h2 {
-    font-family: "Courier New", Courier, monospace;
+h1 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-size: 50px;
     text-align: center;
+    color: white;
 }
 
 p {
-    font-family: "Courier New", Courier, monospace;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-size: 30px;
     text-align: left;
 }
 
 .insert {
-    background-color: black; /* Green */
+    background-color: white; /* Green */
     border: none;
-    color: white;
+    color: rgb(12,75,51);
     padding: 15px 32px;
-    text-align: center;
+    text-align: left;
     text-decoration: none;
+    position: absolute;
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-radius: 4px;
+    width: 500px;
+    height: 80px;
     font-size: 45px;
+    top: 50%;
+    left: 50%;
+    margin: -40px 0 0 -250px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
+.square1 {
+    background-color: rgb(12,75,51); /* Green */
+    border: none;
+    color: white;
+    padding: 0px 0px;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-radius: 4px;
+    width: 80px;
+    height: 80px;
+    font-size: 45px;
+    top: 50%;
+    left: 50%;
+    margin: -40px 0 0 170px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -72,12 +102,17 @@ p {
 }
 
 .search {
-  width: 400px;
+  width: 500px;
+  height: 80px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  margin: 80px 0 0 -250px;
   box-sizing: border-box;
-  border: 2px solid #fff;
+  border: 2px solid white;
   border-radius: 4px;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 50px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 40px;
   background-color: white;
   background-position: 10px 10px;
   background-repeat: no-repeat;
@@ -88,9 +123,9 @@ p {
 .usertype {
   width: 400px;
   box-sizing: border-box;
-  border: 2px solid #fff;
+  border: 2px solid white;
   border-radius: 4px;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
   font-size: 30px;
   background-color: white;
   background-position: 10px 10px;
@@ -103,14 +138,20 @@ p {
     display: inline-block;
 }
 
+.center {
+     float: none;
+     margin-left: auto;
+     margin-right: auto;
+}
 
 </style>
 </head>
-<body>
+git<body>
 
-<h2>Bizuário</h2>
+<h1>Meta Bizu</h1>
 
 <!-- Trigger/Open The Modal -->
+
 <div class="side">
   <button id="myBtn" class="insert" title="Nova avaliação">+</button>
 </div>
@@ -137,24 +178,27 @@ p {
 <!-- The Modal -->
 <div id="myModal" class="modal">
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>Adicione aqui uma nova avaliação:</h2>
-    <p>Nome do item avaliado:</p>
-    <form>
-      <input id="myName" class="usertype" type="text" name="type" placeholder="Nome" title="Insira o livro, matéria ou professor a ser avaliado">
-    </form>
-    <p>Descrição:</p>
-  </div>
 
-</div>
+
+
+<button id="myEvl" class="insert">Nova avaliação</button>
+<a href="add_review_itemPage"><button id="myBtn" class="square1" title="Nova avaliação">+</button></a>
+
+<form>
+  <input id="mySearch" class="search" type="text" name="search" placeholder="Procurar.." title="Procurar avaliações">
+</form>
+
+
+
+
+<!-- The Modal -->
+
 
 
 
 <script>
 // Get the modal
-var modal = document.getElementById('myModal');
+/*var modal = document.getElementById('myModal');
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
@@ -177,7 +221,7 @@ window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
-}
+}*/
 </script>
 
 </body>
