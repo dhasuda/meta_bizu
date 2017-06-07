@@ -146,21 +146,24 @@ p {
 
 </style>
 </head>
-git<body>
+<body>
 
 <h1>Meta Bizu</h1>
 
 <!-- Trigger/Open The Modal -->
 
-<div class="side">
+<!--<div class="side">
   <button id="myBtn" class="insert" title="Nova avaliação">+</button>
-</div>
+<!--</div>
 
-<div class="side">
+<!--<div class="side">
     <!-- <form>
-     <input id="mySearch" class="search" type="text" name="search" placeholder="Search.." title="Buscar avaliações">
+
   </form> -->
-    <form id="item_form" method="post">
+<button id="myEvl" class="insert">Nova avaliação</button>
+<a href=add_review_itemPage.html"><button id="myBtn" class="square1" title="Nova avaliação">+</button></a>
+
+    <form id="item_form" method="post" class="search">
         {% csrf_token %}
         {% for hidden in form.hidden_fields %}
             {{ hidden }}
@@ -173,7 +176,7 @@ git<body>
 
             <input type="submit" name="submit" value="Procurar" />
     </form>
-<div>
+<!--<div>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -182,11 +185,9 @@ git<body>
 
 
 <button id="myEvl" class="insert">Nova avaliação</button>
-<a href="add_review_itemPage"><button id="myBtn" class="square1" title="Nova avaliação">+</button></a>
+<a href="/templates/assessment/add_review_itemPage.html"><button id="myBtn" class="square1" title="Nova avaliação">+</button></a>
 
-<form>
-  <input id="mySearch" class="search" type="text" name="search" placeholder="Procurar.." title="Procurar avaliações">
-</form>
+
 
 
 
