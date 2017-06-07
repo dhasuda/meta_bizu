@@ -1,6 +1,32 @@
 <!DOCTYPE html>
+
+<style>
+    body {
+    background-color: rgb(12,75,51);
+}
+
+
+h1 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 50px;
+    text-align: center;
+    color: white;
+}
+
+p {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 30px;
+    text-align: left;
+}
+
+    input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+</style>
 <html>
     <head>
+<<<<<<< HEAD
         <title>Register</title>
         <style>
         body {
@@ -28,31 +54,39 @@
             color: white;
         }
         </style>
+=======
+        <title>Registro</title>
+>>>>>>> 6e9db7c175f1f8248f0e0f6ef0ed824eb6ed7b49
     </head>
 
     <body>
-        <h1>Register</h1>
+        <h1>Registro</h1>
 
         {% if registered %}
+<<<<<<< HEAD
         <strong><a>thank you for registering!</a></strong>
         <a href="/">Return to the homepage.</a><br />
         {% else %}
         <strong><a>register here!</a></strong><br />
 
         <form id="user_form" method="post">
+=======
+        <strong>Muito obrigado por se registrar!</strong>
+        <a href="/">Voltar para a pagina inicial.</a><br />
+        {% else %}
+            <strong>Se registre aqui!</strong><br />
+            <form id="user_form" method="post">
+>>>>>>> 6e9db7c175f1f8248f0e0f6ef0ed824eb6ed7b49
                 enctype="multipart/form-data">
-
-            {% csrf_token %}
-
+                {% csrf_token %}
             <!-- Display each form. The as_p method wraps each element in a paragraph
                  (<p>) element. This ensures each element appears on a new line,
                  making everything look neater. -->
-            {{ user_form.as_p }}
-            {{ profile_form.as_p }}
-
+                {{ user_form.as_p }}
+                {{ profile_form.as_p }}
             <!-- Provide a button to click to submit the form. -->
-            <input type="submit" name="submit" value="Register" />
-        </form>
+                <input type="submit" name="submit" value="Registrar" />
+            </form>
         {% endif %}
     </body>
 </html>
