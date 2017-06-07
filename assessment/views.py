@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from assessment.models import Item, Opinion
+from assessment.forms import OpinionForm
 
 def home(request):
     return render(request, 'assessment/home.html',)
@@ -7,9 +7,9 @@ def home(request):
 def search(request):
     return render(request, 'assessment/test.html',)
 
-def review(request):
+def add_review(request):
     if request.method == 'POST':
-        form = Opinion(request.POST)
+        form = OpinionForm(request.POST)
 
         if form.is_valid():
             # Save the new Opinion to the database
@@ -20,5 +20,5 @@ def review(request):
             print (form.erros)
 
     else:
-        form = Opinion()
-    return render(request, 'assessment/test.html', {'form': form})
+        form = OpinionForm()
+    return render(request, 'assessment/add_review.html', {'form': form})
