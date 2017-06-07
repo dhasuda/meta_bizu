@@ -21,6 +21,8 @@ p {
     text-align: left;
 }
 
+
+
 .insert {
     background-color: white; /* Green */
     border: none;
@@ -35,6 +37,26 @@ p {
     width: 500px;
     height: 80px;
     font-size: 45px;
+    top: 50%;
+    left: 50%;
+    margin: -40px 0 0 -250px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.what {
+    background-color: transparent; /* Green */
+    border: none;
+    color: rgb(12,75,51);
+    padding: 15px 32px;
+    text-align: right;
+    text-decoration: none;
+    position: absolute;
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-radius: 4px;
+    width: 500px;
+    height: 80px;
+    font-size: 30px;
     top: 50%;
     left: 50%;
     margin: -40px 0 0 -250px;
@@ -109,14 +131,10 @@ p {
   position: absolute;
   margin: 80px 0 0 -250px;
   box-sizing: border-box;
-  border: 2px solid white;
+  background-color: white;
   border-radius: 4px;
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   font-size: 40px;
-  background-color: white;
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  display: inline-block;
   padding: 12px 20px 12px 40px;
 }
 
@@ -174,7 +192,7 @@ p {
             {{ field }}
         {% endfor %}
 
-            <input type="submit" name="submit" value="Procurar" />
+            <input type="submit" name="submit" value="Procurar" class="what" />
     </form>
 <!--<div>
 

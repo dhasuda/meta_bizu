@@ -24,7 +24,7 @@ class ItemSearchForm(forms.ModelForm):
 
 class OpinionForm(forms.ModelForm):
     rank = forms.IntegerField(initial=5)
-    comentario = forms.CharField(max_length=500, help_text="Comment about it here")
+    comentario = forms.CharField(max_length=500, help_text="Comentários")
 
     class Meta:
         model = Opinion
